@@ -1,21 +1,8 @@
-diff --git a/vcl_compiler.h b/vcl_compiler.h
-index 5ca6246..e4791fc 100644
---- a/vcl_compiler.h
-+++ b/vcl_compiler2.h
-@@ -7,12 +7,6 @@
- // It's much better to determine the compiler automatically here than to depend
- // on command-line flags being set.
- //
--// Be careful when modifying this file. In general, you need to make
--// sure that exactly one of the preprocessor flags is defined. For
--// example, if the compiler is GCC 5.3.0, then VCL_GCC should be
--// defined, VCL_GCC_5 should be defined, and VCL_GCC_53 should be
--// defined. Others, like VCL_GCC_51 *should not* be defined.
--//
- // Note that this is most commonly implemented using a cascade of if
- // statements. Be careful to add your statements to the correct place
- // in the cascade list.
-@@ -45,80 +39,41 @@
+diff --git a/Modules/ThirdParty/VNL/src/vxl/vcl/vcl_compiler.h b/Modules/ThirdParty/VNL/src/vxl/vcl/vcl_compiler.h
+index 22756a9..e4791fc 100644
+--- a/Modules/ThirdParty/VNL/src/vxl/vcl/vcl_compiler.h
++++ b/Modules/ThirdParty/VNL/src/vxl/vcl/vcl_compiler_1.h
+@@ -39,69 +39,41 @@
  #if defined(__GNUC__) && !defined(__ICC) // icc 8.0 defines __GNUC__
  # define VCL_GCC
  # if (__GNUC__ < 4)
@@ -59,17 +46,6 @@ index 5ca6246..e4791fc 100644
 -#   define VCL_GCC_71
 -#  else
 -#   define VCL_GCC_70
--#  endif
--# elif (__GNUC__==8)
--#  define VCL_GCC_8
--#  if (__GNUC_MINOR__ > 2 )
--#   define VCL_GCC_83
--#  elif (__GNUC_MINOR__ > 1 )
--#   define VCL_GCC_82
--#  elif (__GNUC_MINOR__ > 0 )
--#   define VCL_GCC_81
--#  else
--#   define VCL_GCC_80
 -#  endif
 -# else
 -#  error "Dunno about this gcc"
@@ -121,3 +97,12 @@ index 5ca6246..e4791fc 100644
  #endif
  
  // win32 or vc++ ?
+@@ -891,7 +863,7 @@ __inline int vcl_snprintf(char *outBuf, size_t size, const char *format, ...)
+ #define vcl_uninitialized_copy std::uninitialized_copy
+ #define vcl_uninitialized_fill std::uninitialized_fill
+ #define vcl_uninitialized_fill_n std::uninitialized_fill_n
+-#define vcl_auto_ptr std::auto_ptr
++#define vcl_auto_ptr vcl_auto_ptr
+ #define vcl_bad_alloc std::bad_alloc
+ #define vcl_set_new_handler std::set_new_handler
+ #define vcl_accumulate std::accumulate
