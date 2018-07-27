@@ -47,7 +47,7 @@ if(NOT DEFINED ITK_DIR)
 
   ExternalProject_Add(${proj}
      LIST_SEPARATOR ${sep}
-     URL "https://sourceforge.net/projects/itk/files/itk/5.0/InsightToolkit-5.0a01.tar.xz"
+     URL "https://github.com/InsightSoftwareConsortium/ITK/archive/v5.0a02.tar.gz"
      # work with external GDCM
      # PATCH_COMMAND ${PATCH_COMMAND} -N -p1 -i ${CMAKE_CURRENT_LIST_DIR}/ITK-4.11.0.patch
      CMAKE_GENERATOR ${gen}
